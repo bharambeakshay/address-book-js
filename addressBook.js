@@ -1,3 +1,4 @@
+//UC1 creating class
 class ContactDetails {
   //constructor
   constructor(...params) {
@@ -113,8 +114,8 @@ class ContactDetails {
 }
 //creating an instance and giving contact details
 try {
-  let contactDetailsArray = new Array();
   // uc3 adding  contact details to array 
+  let contactDetailsArray = new Array();
   contactDetailsArray.push(new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
     "91 7558368932", "bharambeakshay@gmail.com"));
   contactDetailsArray.push(new ContactDetails("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
@@ -139,6 +140,16 @@ try {
   contactDetailsArray.splice(index, 1);
   console.log("contacts after being deleted");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+
+  //uc6 Reduce function to find number of contacts
+  var totalContacts = 0;
+  function findTotalContacts(contactDetailsArray) {
+    if (contactDetailsArray != null)
+      totalContacts++;
+    return totalContacts;
+  }
+  contactDetailsArray.reduce(findTotalContacts, 1);
+  console.log("Total number of contacts in contactdetails array  : " + totalContacts);
 }
 catch (e) {
   console.log(e);
