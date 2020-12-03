@@ -1,4 +1,3 @@
-
 class ContactDetails {
   //constructor
   constructor(...params) {
@@ -12,7 +11,8 @@ class ContactDetails {
     this.email = params[7];
   }
 
-  //get and set for firstname 
+  //uc2 validating all the details
+  // get and set for firstname 
   //first letter should be capital and min 3 letters
   get firstName() { return this._firstName; }
   set firstName(firstName) {
@@ -25,6 +25,7 @@ class ContactDetails {
   }
 
   //get and set for lastname
+  //first letter should be capital and min 3 letters
   get lastName() { return this._lastName; }
   set lastName(lastName) {
     let nameRegex = RegExp("^[A-Z]{1}[A-Za-z]{2,}$");
@@ -36,6 +37,7 @@ class ContactDetails {
   }
 
   //get and set for address
+  //minimum four characters
   get address() { return this._address; }
   set address(address) {
     let addressRegex = RegExp("^[A-Za-z]{4,}$");
@@ -46,6 +48,7 @@ class ContactDetails {
   }
 
   //get and set for city
+  //minimum four characters
   get city() { return this._city; }
   set city(city) {
     let cityRegex = RegExp("^[A-Za-z]{4,}$");
@@ -56,6 +59,7 @@ class ContactDetails {
   }
 
   //get and set for state
+  //minimum four characters
   get state() { return this._state; }
   set state(state) {
     let stateRegex = RegExp("^[A-Za-z0-9]{4,}$");
@@ -66,6 +70,7 @@ class ContactDetails {
   }
 
   //get and set for zip
+  //pin code of form 789 987
   get zip() { return this._zip; }
   set zip(zip) {
     let zipRegex = RegExp("^[1-9]{3}[ ]?[0-9]{3}$");
@@ -76,6 +81,7 @@ class ContactDetails {
   }
 
   //get and set for phoneNumber
+  //phone number should be of form 91 9650925666
   get phoneNumber() { return this._phoneNumber; }
   set phoneNumber(phoneNumber) {
     let phoneRegex = RegExp("^[1-9]{2}[ ]{1}[0-9]{10}$");
@@ -86,9 +92,9 @@ class ContactDetails {
   }
 
   // get and set for email
+  //ac.xyz@gmail.com.in .xyz-optional  .in-optional
   get email() { return this._email; }
   set email(email) {
-
     let emailRegex = RegExp("^([a-z0-9A-Z])+([.]?[a-z0-9A-Z]+)*[@]{1}[a-z0-9A-Z]+[.]{1}[a-zA-Z]{2,}([.]{1}[a-z]{2,})?$");
     if (emailRegex.test(email))
       this._email = email;
@@ -105,11 +111,10 @@ class ContactDetails {
       + ", Phone Number: " + this.phoneNumber + ", Email: " + this.email;
   }
 }
-
 //creating an instance and giving contact details
 try {
-  //adding  contact details to array 
   let contactDetailsArray = new Array();
+  // uc3 adding  contact details to array 
   contactDetailsArray.push(new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
     "91 7558368932", "bharambeakshay@gmail.com"));
   contactDetailsArray.push(new ContactDetails("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
@@ -121,15 +126,19 @@ try {
   //printing array before updating
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
-  //finding index using name
-  let check = contactDetailsArray.findIndex(contact => contact.firstName == "Roma");
+  // uc4 finding index using name
+  let index = contactDetailsArray.findIndex(contact => contact.firstName == "Roma");
   //updating the contact detail
-  contactDetailsArray[check].zip = "121 003";
+  contactDetailsArray[index].zip = "121 003";
 
   //displaying contacts after being updated
   console.log("contacts after being updated");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
+  //uc5 Removes an element from an array at specified index
+  contactDetailsArray.splice(index, 1);
+  console.log("contacts after being deleted");
+  contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
   console.log(e);
