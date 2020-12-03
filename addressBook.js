@@ -1,3 +1,4 @@
+
 class ContactDetails {
   //constructor
   constructor(...params) {
@@ -57,7 +58,7 @@ class ContactDetails {
   //get and set for state
   get state() { return this._state; }
   set state(state) {
-    let stateRegex = RegExp("^[A-Za-z]{4,}$");
+    let stateRegex = RegExp("^[A-Za-z0-9]{4,}$");
     if (stateRegex.test(state))
       this._state = state;
     else
@@ -87,8 +88,10 @@ class ContactDetails {
   // get and set for email
   get email() { return this._email; }
   set email(email) {
+
     let emailRegex = RegExp("^([a-z0-9A-Z])+([.]?[a-z0-9A-Z]+)*[@]{1}[a-z0-9A-Z]+[.]{1}[a-zA-Z]{2,}([.]{1}[a-z]{2,})?$");
     if (emailRegex.test(email))
+
       this._email = email;
     else
       throw "Invalid email";
@@ -96,18 +99,26 @@ class ContactDetails {
 
   //defining to string method
   toString() {
-    return "First Name: " + this.firstName + ", Last Name: " + this.lastName + "\nAddress: " + this.address
+    return "First Name: " + this.firstName + ", Last Name: " + this.lastName
+      + "\nAddress: " + this.address
       + ", City: " + this.city + ", State: "
-      + this.state + "\nZip: " + this.zip + ", Phone Number: " + this.phoneNumber
-      + ", Email: " + this.email;
+      + this.state + "\nZip: " + this.zip
+      + ", Phone Number: " + this.phoneNumber + ", Email: " + this.email;
   }
 }
 
 //creating an instance and giving contact details
 try {
-  let contact = new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
-    "91 7558368932", "bharambeakshay@gmail.com");
-  console.log(contact.toString());
+  let contactDetailsArray = new Array();
+  contactDetailsArray.push(new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
+    "91 7558368932", "bharambeakshay@gmail.com"));
+  contactDetailsArray.push(new ContactDetails("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
+    "128 755", "91 8587087642", "roma@gmail.com"));
+  contactDetailsArray.push(new ContactDetails("Daisy", "Alava", "fourstreet", "Paris", "France",
+    "871 258", "87 6587321451", "daisy@gmail.com"));
+  contactDetailsArray.push(new ContactDetails("Troy", "Tom", "alaska", "Zurich", "Switzerland",
+    "128 213", "91 8966541252", "troy@gmail.com"));
+  contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
   console.log(e);
