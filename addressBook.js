@@ -105,7 +105,10 @@ class AddressBook {
 
   //defining to string method
   toString() {
-    return "first Name: " + this.firstName + ", last Name: " + this.lastName + "\nAddress: " + this.address + ", City: " + this.city + ", State: " + this.state + "  Zip: " + this.zip + ", \nPhoneNumber: " + this.phoneNumber + ", email: " + this.email;
+    return "first Name: " + this.firstName + ", last Name: " + this.lastName
+      + "\nAddress: " + this.address + ", City: " + this.city
+      + ", State: " + this.state + "  Zip: " + this.zip
+      + ", \nPhoneNumber: " + this.phoneNumber + ", email: " + this.email;
   }
 }
 //creating an instance and giving contact details
