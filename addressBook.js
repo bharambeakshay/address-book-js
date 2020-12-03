@@ -1,4 +1,3 @@
-
 //uc1 creating a class
 class AddressBook {
   //constructor
@@ -106,11 +105,7 @@ class AddressBook {
 
   //defining to string method
   toString() {
-    return "First Name: " + this.firstName + ", Last Name: " + this.lastName
-      + "\nAddress: " + this.address
-      + ", City: " + this.city + ", State: "
-      + this.state + "\nZip: " + this.zip
-      + ", Phone Number: " + this.phoneNumber + ", Email: " + this.email;
+    return "first Name: " + this.firstName + ", last Name: " + this.lastName + "\nAddress: " + this.address + ", City: " + this.city + ", State: " + this.state + "  Zip: " + this.zip + ", \nPhoneNumber: " + this.phoneNumber + ", email: " + this.email;
   }
 }
 //creating an instance and giving contact details
@@ -124,7 +119,8 @@ try {
   contactDetailsArray.push(new AddressBook("Daisy", "Alava", "fourstreet", "Paris", "France",
     "871 258", "87 6587321451", "daisy@gmail.com"));
   contactDetailsArray.push(new AddressBook("Troy", "Tom", "alaska", "Zurich", "Switzerland",
-    "128 213", "91 8966541252", "troy@gmail.com"));//printing array before updating
+    "128 213", "91 8966541252", "troy@gmail.com"));
+  //printing array before updating
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   // uc4 finding index using name
@@ -165,24 +161,35 @@ try {
   else
     console.log("duplicate entry");
 
-  //uc8 search person using city or state
+  //uc8 search person using city or state & uc10 for counting
   //by city
+  var numberOfCity = 0;
+  var numberOfState = 0;
   console.log("");
   console.log("Contact by City Paris")
   function ContactByCity(contactDetails) {
-    if (contactDetails.city == "Paris")
+    if (contactDetails.city == "Paris") {
       console.log(contactDetails.toString());
-
+      numberOfCity++;
+    }
   }
   contactDetailsArray.filter(ContactByCity);
+  console.log("contacts by city " + numberOfCity);
 
   //by state
-  console.log("Contact By State Haryana")
-  let citycontact = contactDetailsArray.filter((contact) => contact.state.includes("Haryana"));
-  console.log(citycontact.toString());
+  function ContactByState(contact) {
+    if (contact.state == "Haryana") {
+      console.log(contact.toString());
+      numberOfState++;
+    }
+  }
+  console.log("Contact By State ")
+  contactDetailsArray.filter(ContactByState);
+  console.log("contacts by state " + numberOfState);
 
   //uc9 Contacts by city or State using map  
   //by state
+  console.log("contact details by city or state using map");
   function CityMap(contact) {
     return contact.city + " -> " + contact.firstName + "  " + contact.lastName;
   }
