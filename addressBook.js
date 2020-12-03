@@ -196,8 +196,6 @@ try {
   let addressStateMap = contactDetailsArray.map(StateMap);
   console.log(addressStateMap);
 
-
-
 }
 catch (e) {
   console.log(e);
