@@ -1,4 +1,4 @@
-class ContactDetails {
+class AddressBook {
   //constructor
   constructor(...params) {
     this.firstName = params[0];
@@ -105,7 +105,7 @@ class ContactDetails {
 
 //creating an instance and giving contact details
 try {
-  let contact = new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
+  let contact = new AddressBook("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
     "91 7558368932", "bharambeakshay@gmail.com");
   console.log(contact.toString());
 }
