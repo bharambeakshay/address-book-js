@@ -114,6 +114,11 @@ class AddressBook {
 }
 //creating an instance and giving contact details
 try {
+
+  let contact = new AddressBook("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
+    "91 7558368932", "bharambeakshay@gmail.com");
+  console.log(contact.toString());
+
   // uc3 adding  contact details to array 
 
   let contactDetailsArray = new Array();
@@ -250,7 +255,6 @@ try {
   console.log("Sort By Zip")
   SortByZip();
 
-}
 catch (e) {
   console.log(e);
 }
