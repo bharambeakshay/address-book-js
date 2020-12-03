@@ -1,4 +1,4 @@
-//UC1 creating class
+//uc1 creating a class
 
 class AddressBook {
   //constructor
