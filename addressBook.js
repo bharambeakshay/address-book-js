@@ -124,7 +124,8 @@ try {
   contactDetailsArray.push(new AddressBook("Daisy", "Alava", "fourstreet", "Paris", "France",
     "871 258", "87 6587321451", "daisy@gmail.com"));
   contactDetailsArray.push(new AddressBook("Troy", "Tom", "alaska", "Zurich", "Switzerland",
-    "128 213", "91 8966541252", "troy@gmail.com"));//printing array before updating
+    "128 213", "91 8966541252", "troy@gmail.com"));
+  //printing array before updating
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   // uc4 finding index using name
