@@ -154,7 +154,7 @@ try {
   //uc7 check for duplicate value
   let countForDuplicate = 0;
   function CheckForDuplicates(contact) {
-    if (contact.firstName == "Akshay")
+    if (contact.firstName == "Kretika")
       countForDuplicate++;
     return countForDuplicate;
   }
@@ -164,6 +164,22 @@ try {
     console.log("not a duplicate entry");
   else
     console.log("duplicate entry");
+
+  //uc8 search person using city or state
+  //by city
+  console.log("");
+  console.log("Contact by City Paris")
+  function ContactByCity(contactDetailsArray) {
+    if (contactDetailsArray.city == "Paris")
+      console.log(contactDetailsArray.toString());
+
+  }
+  contactDetailsArray.filter(ContactByCity);
+
+  //by state
+  console.log("Contact By State Haryana")
+  let citycontact = contactDetailsArray.filter((contact) => contact.state.includes("Haryana"));
+  console.log(citycontact.toString());
 }
 catch (e) {
   console.log(e);
