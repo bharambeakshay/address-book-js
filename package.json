@@ -1,0 +1,19 @@
+{
+  "name": "address-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "addressBook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharambeakshay/addressbook-javascript.git"
+  },
+  "author": "Akshay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharambeakshay/addressbook-javascript/issues"
+  },
+  "homepage": "https://github.com/bharambeakshay/addressbook-javascript#readme"
+}
