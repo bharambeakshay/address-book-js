@@ -74,7 +74,7 @@ class AddressBook {
   //pin code of form 789 987
   get zip() { return this._zip; }
   set zip(zip) {
-    let zipRegex = RegExp("^[1-9]{3}[ ]?[0-9]{3}$");
+    let zipRegex = RegExp("^[1-9]{3}[ ]*[0-9]{3}$");
     if (zipRegex.test(zip))
       this._zip = zip;
     else
@@ -127,20 +127,23 @@ try {
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   // uc4 finding index using name
+  console.log("****************************************************************");
   let index = contactDetailsArray.findIndex(contact => contact.firstName == "Roma");
   //updating the contact detail
-  contactDetailsArray[index].zip = "121 003";
+  contactDetailsArray[index].zip = "121003";
 
   //displaying contacts after being updated
   console.log("contacts after being updated");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   //uc5 Removes an element from an array at specified index
+  console.log("******************************************************************");
   contactDetailsArray.splice(index, 1);
   console.log("contacts after being deleted");
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   //uc6 Reduce function to find number of contacts
+  console.log("*******************************************************************");
   var totalContacts = 0;
   function FindTotalContacts(contactDetailsArray) {
     if (contactDetailsArray != null)
@@ -207,11 +210,38 @@ try {
   console.log(addressStateMap);
 
   //uc11 sorting by name and printing the array
-  console.log("Sorting by firstName");
-  for (let contactDetails in contactDetailsArray) {
-    contactDetailsArray.sort(contactDetails.firstName);
+  function SortByName() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.firstName);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
   }
-  contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  function SortByCity() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.city);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortByState() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.state);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortByZip() {
+    for (let contactDetails in contactDetailsArray) {
+      contactDetailsArray.sort(contactDetails.zip);
+    }
+    contactDetailsArray.forEach((contact) => console.log(contact.toString()));
+  }
+  console.log("Sorting by firstName");
+  SortByName();
+  console.log("Sort By City")
+  SortByCity();
+  console.log("Sort By State")
+  SortByState();
+  console.log("Sort By Zip")
+  SortByZip();
 }
 catch (e) {
   console.log(e);
