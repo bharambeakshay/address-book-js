@@ -1,4 +1,5 @@
-//uc1 creating a class
+
+//UC1 creating class
 class AddressBook {
   //constructor
   constructor(...params) {
