@@ -185,6 +185,11 @@ try {
   console.log("contacts by city " + numberOfCity);
 
   //by state
+
+  console.log("Contact By State Maharashtra")
+  let citycontact = contactDetailsArray.filter((contact) => contact.state.includes("Maharashtra"));
+  console.log(citycontact.toString());
+
   function ContactByState(contact) {
     if (contact.state == "Haryana") {
       console.log(contact.toString());
@@ -244,6 +249,7 @@ try {
   SortByState();
   console.log("Sort By Zip")
   SortByZip();
+
 }
 catch (e) {
   console.log(e);
