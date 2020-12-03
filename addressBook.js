@@ -1,4 +1,4 @@
-class ContactDetails {
+class AddressBook {
   //constructor
   constructor(...params) {
     this.firstName = params[0];
@@ -115,13 +115,13 @@ class ContactDetails {
 try {
   let contactDetailsArray = new Array();
   // uc3 adding  contact details to array 
-  contactDetailsArray.push(new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
+  contactDetailsArray.push(new AddressBook("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
     "91 7558368932", "bharambeakshay@gmail.com"));
-  contactDetailsArray.push(new ContactDetails("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
+  contactDetailsArray.push(new AddressBook("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
     "128 755", "91 8587087642", "roma@gmail.com"));
-  contactDetailsArray.push(new ContactDetails("Daisy", "Alava", "fourstreet", "Paris", "France",
+  contactDetailsArray.push(new AddressBook("Daisy", "Alava", "fourstreet", "Paris", "France",
     "871 258", "87 6587321451", "daisy@gmail.com"));
-  contactDetailsArray.push(new ContactDetails("Troy", "Tom", "alaska", "Zurich", "Switzerland",
+  contactDetailsArray.push(new AddressBook("Troy", "Tom", "alaska", "Zurich", "Switzerland",
     "128 213", "91 8966541252", "troy@gmail.com"));
   //printing array before updating
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
