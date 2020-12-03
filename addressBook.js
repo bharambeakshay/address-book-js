@@ -1,5 +1,6 @@
+
 //uc1 creating a class
-class ContactDetails {
+class AddressBook {
   //constructor
   constructor(...params) {
     this.firstName = params[0];
@@ -116,15 +117,14 @@ class ContactDetails {
 try {
   // uc3 adding  contact details to array 
   let contactDetailsArray = new Array();
-  contactDetailsArray.push(new ContactDetails("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
+  contactDetailsArray.push(new AddressBook("Akshay", "Bharambe", "Kothrud", "Pune", "Maharashtra", "411004",
     "91 7558368932", "bharambeakshay@gmail.com"));
-  contactDetailsArray.push(new ContactDetails("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
+  contactDetailsArray.push(new AddressBook("Roma", "Salvador", "nearhighway", "Mumbai", "Maharashtra",
     "128 755", "91 8587087642", "roma@gmail.com"));
-  contactDetailsArray.push(new ContactDetails("Daisy", "Alava", "fourstreet", "Paris", "France",
+  contactDetailsArray.push(new AddressBook("Daisy", "Alava", "fourstreet", "Paris", "France",
     "871 258", "87 6587321451", "daisy@gmail.com"));
-  contactDetailsArray.push(new ContactDetails("Troy", "Tom", "alaska", "Zurich", "Switzerland",
-    "128 213", "91 8966541252", "troy@gmail.com"));
-  //printing array before updating
+  contactDetailsArray.push(new AddressBook("Troy", "Tom", "alaska", "Zurich", "Switzerland",
+    "128 213", "91 8966541252", "troy@gmail.com"));//printing array before updating
   contactDetailsArray.forEach((contact) => console.log(contact.toString()));
 
   // uc4 finding index using name
@@ -154,7 +154,7 @@ try {
   //uc7 check for duplicate value
   let countForDuplicate = 0;
   function CheckForDuplicates(contact) {
-    if (contact.firstName == "Kretika")
+    if (contact.firstName == "Akshay")
       countForDuplicate++;
     return countForDuplicate;
   }
@@ -169,9 +169,9 @@ try {
   //by city
   console.log("");
   console.log("Contact by City Paris")
-  function ContactByCity(contactDetailsArray) {
-    if (contactDetailsArray.city == "Paris")
-      console.log(contactDetailsArray.toString());
+  function ContactByCity(contactDetails) {
+    if (contactDetails.city == "Paris")
+      console.log(contactDetails.toString());
 
   }
   contactDetailsArray.filter(ContactByCity);
@@ -180,6 +180,24 @@ try {
   console.log("Contact By State Haryana")
   let citycontact = contactDetailsArray.filter((contact) => contact.state.includes("Haryana"));
   console.log(citycontact.toString());
+
+  //uc9 Contacts by city or State using map  
+  //by state
+  function CityMap(contact) {
+    return contact.city + " -> " + contact.firstName + "  " + contact.lastName;
+  }
+  let addressCityMap = contactDetailsArray.map(CityMap);
+  console.log(addressCityMap);
+
+  //by city
+  function StateMap(contactDetails) {
+    return contactDetails.state + " -> " + contactDetails.firstName + "  " + contactDetails.lastName;
+  }
+  let addressStateMap = contactDetailsArray.map(StateMap);
+  console.log(addressStateMap);
+
+
+
 }
 catch (e) {
   console.log(e);
